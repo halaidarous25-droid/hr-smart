@@ -17,11 +17,21 @@ DATA_FILE = Path(__file__).parent / "data.json"
 
 # ── Helpers ───────────────────────────────────────────────────
 def load_data():
-    if DATA_FILE.exists():
+    """Load data — auto-create data.json if missing or corrupted."""
+    if not DATA_FILE.exists():
+        empty = {"employees": [], "responsibilities": []}
+        DATA_FILE.write_text(json.dumps(empty, ensure_ascii=False, indent=2), encoding="utf-8")
+        return empty
+    try:
         return json.loads(DATA_FILE.read_text(encoding="utf-8"))
-    return {"employees": [], "responsibilities": []}
+    except Exception:
+        empty = {"employees": [], "responsibilities": []}
+        DATA_FILE.write_text(json.dumps(empty, ensure_ascii=False, indent=2), encoding="utf-8")
+        return empty
 
 def save_data(data):
+    """Save data — ensure directory exists."""
+    DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
     DATA_FILE.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
 
 def new_id(): return str(uuid.uuid4())[:8]
