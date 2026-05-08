@@ -1,0 +1,55 @@
+{
+  "employees": [
+    {
+      "name": "أحمد علي",
+      "role": "ELO",
+      "role_label": "أخصائي دورة الموظف",
+      "level": "specialist",
+      "team_id": "team-alpha",
+      "username": "ahmed",
+      "password": "123",
+      "target_points": 1500,
+      "strengths": [
+        "سريع التعلم",
+        "دقة عالية"
+      ],
+      "weaknesses": [
+        "يتأخر أحياناً"
+      ],
+      "notes": "موظف ممتاز",
+      "experience_notes": "خبير في Oracle",
+      "id": "ab5aa9e1",
+      "color": "#0f766e",
+      "aiAnalysis": null
+    }
+  ],
+  "responsibilities": [
+    {
+      "name": "إجازات مرضية",
+      "category": "Leave",
+      "description": "معالجة الإجازات المرضية",
+      "weight": 3,
+      "load": 3,
+      "avg_time_minutes": 30,
+      "monthly_frequency": 20,
+      "yearly_volume": 240,
+      "complexity_level": "متوسط",
+      "impact_level": "متوسط",
+      "required_role": "LMA",
+      "sub_tasks": [
+        "استلام الطلب",
+        "مراجعة البيانات"
+      ],
+      "systems": [
+        "Oracle",
+        "ECTS"
+      ],
+      "kpi_metric": "95% خلال يومين",
+      "id": "7b5bb27e",
+      "assignedTo": null,
+      "cover1": null,
+      "cover2": null,
+      "aiData": null
+    }
+  ]
+}
